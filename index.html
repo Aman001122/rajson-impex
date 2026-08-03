@@ -531,17 +531,21 @@
 
 .loader-content{
 
-    text-align:center;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:20px;
 
 }
 
 .loader-content img{
 
-    width:90px;
+    width:120px;
+    height:auto;
+    object-fit:contain;
 
-    margin-bottom:20px;
-
-    animation:logoFloat 1.8s infinite ease-in-out;
+    animation:logoFloat 2s ease-in-out infinite;
 
 }
 
@@ -551,9 +555,22 @@
 
     color:#0A2036;
 
-    font-size:36px;
+    font-size:48px;
 
-    letter-spacing:1px;
+    font-weight:600;
+
+    letter-spacing:2px;
+
+}
+.loader-content p{
+
+    color:#666;
+
+    letter-spacing:4px;
+
+    text-transform:uppercase;
+
+    font-size:13px;
 
 }
 
@@ -599,11 +616,13 @@
 
     <div class="loader-content">
 
-        <img src="assets/logo/logo.png" alt="Rajson Impex Logo">
+    <img src="assets/logo/logo.png" alt="Rajson Impex Logo">
 
-        <h2>Rajson Impex</h2>
+    <h2>Rajson Impex</h2>
 
-    </div>
+    <p>Premium Agricultural Exports</p>
+
+</div>
 
 </div>
 
@@ -1054,18 +1073,23 @@
 
 window.addEventListener("load",()=>{
 
-    const preloader=document.getElementById("preloader");
+    const preloader = document.getElementById("preloader");
 
-    preloader.style.opacity="0";
-
+    // Keep loader visible for 2.5 seconds
     setTimeout(()=>{
 
-        preloader.style.display="none";
+        preloader.style.opacity="0";
 
-    },600);
+        // Wait for fade-out animation
+        setTimeout(()=>{
+
+            preloader.style.display="none";
+
+        },600);
+
+    },900);
 
 });
-
 </script>
 
 </body>
