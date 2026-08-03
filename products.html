@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="icon" type="image/png" href="assets/logo/favicon.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Products | Rajson Impex</title>
+    <meta name="description" content="Explore Rajson Impex's premium export-quality Java Groundnuts and Bold Groundnuts sourced from trusted Indian farmers.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <style>
+        html{
+    scroll-behavior:smooth;
+}
+
+        :root{
+            --navy:#0A2036;
+            --gold:#C6A15B;
+            --light:#F7F6F2;
+            --text:#222;
+            --muted:#666;
+            --border:#E6E2DA;
+        }
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
+        body{
+            font-family:Inter,sans-serif;
+            color:var(--text);
+            background:#fff;
+            line-height:1.6;
+        }
+
+        img{
+            width:100%;
+            display:block;
+        }
+
+        a{
+            text-decoration:none;
+            color:inherit;
+        }
+
+        .container{
+            width:min(1180px,90%);
+            margin:auto;
+        }
+
+        /* ---------------- NAVBAR ---------------- */
+
+        .navbar{
+
+            position:fixed;
+
+            top:0;
+
+            width:100%;
+
+            z-index:1000;
+
+            background:rgba(10,32,54,.94);
+
+            backdrop-filter:blur(12px);
+
+        }
+
+        .navbar .container{
+
+            display:flex;
+
+            justify-content:space-between;
+
+            align-items:center;
+
+            height:78px;
+
+        }
+
+        .logo{
+
+            display:flex;
+
+            align-items:center;
+
+            gap:12px;
+
+            color:#fff;
+
+            font-family:Fraunces,serif;
+
+            font-size:26px;
+
+        }
+
+        .logo img{
+
+            width:42px;
+
+        }
+
+        .nav-links{
+
+            display:flex;
+
+            list-style:none;
+
+            gap:34px;
+
+        }
+
+        .nav-links a{
+
+            color:white;
+
+            font-size:15px;
+
+            transition:.3s;
+
+        }
+
+        .nav-links a:hover{
+
+            color:var(--gold);
+
+        }
+        .nav-links a.active{
+
+    color:var(--gold);
+
+    font-weight:700;
+
+}
+
+.nav-links a.active::after{
+
+    content:"";
+
+    display:block;
+
+    width:100%;
+
+    height:2px;
+
+    background:var(--gold);
+
+    margin-top:6px;
+
+}
+
+        .quote-btn{
+
+            padding:12px 24px;
+
+            background:var(--gold);
+
+            color:var(--navy);
+
+            font-weight:600;
+
+        }
+
+        /* ---------------- HERO ---------------- */
+
+        .hero{
+
+            padding:170px 0 90px;
+
+            background:linear-gradient(180deg,#102943,#0A2036);
+
+            color:white;
+
+            text-align:center;
+
+        }
+
+        .hero small{
+
+            letter-spacing:2px;
+
+            color:#D8C18E;
+
+            font-weight:700;
+
+        }
+
+        .hero h1{
+
+            margin-top:18px;
+
+            font-family:Fraunces,serif;
+
+            font-size:58px;
+
+        }
+
+        .hero p{
+
+            max-width:760px;
+
+            margin:25px auto 0;
+
+            color:#d8d8d8;
+
+            font-size:18px;
+
+        }
+
+        /* ---------------- PRODUCTS ---------------- */
+
+        .products{
+
+            padding:90px 0;
+
+            background:var(--light);
+
+        }
+
+        .grid{
+
+            display:grid;
+
+            grid-template-columns:repeat(2,1fr);
+
+            gap:40px;
+
+        }
+
+        .card{
+
+            background:white;
+
+            border:1px solid var(--border);
+
+            overflow:hidden;
+
+            transition:.35s;
+
+        }
+
+        .card:hover{
+
+            transform:translateY(-8px);
+
+            box-shadow:0 25px 50px rgba(0,0,0,.12);
+
+        }
+
+        .card-image{
+
+            height:340px;
+
+            overflow:hidden;
+
+        }
+
+        .card-image img{
+
+            height:100%;
+
+            object-fit:cover;
+
+            transition:.5s;
+
+        }
+
+        .card:hover img{
+
+            transform:scale(1.05);
+
+        }
+
+        .card-content{
+
+            padding:34px;
+
+        }
+
+        .card h2{
+
+            font-family:Fraunces,serif;
+
+            margin-bottom:16px;
+
+            color:var(--navy);
+
+        }
+
+        .card p{
+
+            color:var(--muted);
+
+            margin-bottom:28px;
+
+        }
+
+        .btn{
+
+            display:inline-block;
+
+            background:var(--navy);
+
+            color:white;
+
+            padding:14px 26px;
+
+            font-weight:600;
+
+        }
+
+        footer{
+
+            background:var(--navy);
+
+            color:white;
+
+            text-align:center;
+
+            padding:35px;
+
+        }
+
+        @media(max-width:900px){
+
+            .grid{
+
+                grid-template-columns:1fr;
+
+            }
+
+            .hero h1{
+
+                font-size:42px;
+
+            }
+
+            .nav-links{
+
+                display:none;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<nav class="navbar">
+
+    <div class="container">
+
+        <a class="logo" href="index.html">
+
+            <img src="assets/logo/logo.png" alt="Rajson Impex">
+
+            <span>Rajson Impex</span>
+
+        </a>
+
+        <ul class="nav-links">
+
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="products.html" class="active">Products</a></li>
+            <li><a href="contact.html">Contact</a></li>
+
+        </ul>
+
+        <a href="contact.html" class="quote-btn">Get Quote</a>
+
+    </div>
+
+</nav>
+
+<section class="hero">
+
+    <div class="container">
+
+        <small>OUR PRODUCTS</small>
+
+        <h1>Premium Agricultural Products</h1>
+
+        <p>
+            Explore our export-quality groundnuts sourced from trusted farms,
+            processed with strict quality control and packed for international markets.
+        </p>
+
+    </div>
+
+</section>
+
+<section class="products">
+
+    <div class="container">
+
+        <div class="grid">
+
+            <div class="card">
+
+                <div class="card-image">
+                    <img src="assets/products/java-groundnut/java2.jpg" alt="Java Groundnut">
+                </div>
+
+                <div class="card-content">
+
+                    <h2>Java Groundnut</h2>
+
+                    <p>
+                        Premium export-quality Java Groundnuts with excellent taste,
+                        high oil content and uniform kernel size.
+                    </p>
+
+                    <a href="products/java-groundnut.html" class="btn">
+                        View Details
+                    </a>
+
+                </div>
+
+            </div>
+
+            <div class="card">
+
+                <div class="card-image">
+                    <img src="assets/products/bold-groundnut/bold4.jpg" alt="Bold Groundnut">
+                </div>
+
+                <div class="card-content">
+
+                    <h2>Bold Groundnut</h2>
+
+                    <p>
+                        Large premium kernels ideal for roasting, snacks,
+                        confectionery and international wholesale markets.
+                    </p>
+
+                    <a href="products/bold-groundnut.html" class="btn">
+                        View Details
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="why">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <small>WHY CHOOSE US</small>
+
+            <h2>Why Buyers Trust Rajson Impex</h2>
+
+        </div>
+
+        <div class="why-grid">
+
+            <div class="why-card">
+
+                <h3>Premium Quality</h3>
+
+                <p>
+                    Every shipment is carefully selected,
+                    cleaned and graded before export.
+                </p>
+
+            </div>
+
+            <div class="why-card">
+
+                <h3>Competitive Pricing</h3>
+
+                <p>
+                    Direct sourcing from farmers ensures
+                    better pricing without compromising quality.
+                </p>
+
+            </div>
+
+            <div class="why-card">
+
+                <h3>Worldwide Shipping</h3>
+
+                <p>
+                    Safe packaging and reliable logistics
+                    for international buyers.
+                </p>
+
+            </div>
+
+            <div class="why-card">
+
+                <h3>Timely Delivery</h3>
+
+                <p>
+                    Orders are processed efficiently
+                    to meet agreed shipping schedules.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+/* ---------- WHY ---------- */
+
+.why{
+
+    padding:90px 0;
+
+    background:white;
+
+}
+
+.section-title{
+
+    text-align:center;
+
+    margin-bottom:60px;
+
+}
+
+.section-title small{
+
+    color:var(--gold);
+
+    letter-spacing:2px;
+
+    font-weight:700;
+
+}
+
+.section-title h2{
+
+    font-family:Fraunces,serif;
+
+    font-size:46px;
+
+    margin-top:16px;
+
+    color:var(--navy);
+
+}
+
+.why-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:30px;
+
+}
+
+.why-card{
+
+    border:1px solid var(--border);
+
+    padding:35px;
+
+    transition:.3s;
+
+}
+
+.why-card:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:0 20px 40px rgba(0,0,0,.08);
+
+}
+
+.why-card h3{
+
+    font-family:Fraunces,serif;
+
+    color:var(--navy);
+
+    margin-bottom:14px;
+
+}
+
+.why-card p{
+
+    color:var(--muted);
+
+}
+
+@media(max-width:900px){
+
+    .why-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+<section class="cta">
+
+    <div class="container">
+
+        <h2>
+            Ready to Import Premium Groundnuts?
+        </h2>
+
+        <p>
+
+            Whether you're a wholesaler, food manufacturer,
+            distributor or importer, Rajson Impex is ready
+            to supply premium export-quality groundnuts
+            tailored to your requirements.
+
+        </p>
+
+        <div class="cta-buttons">
+
+            <a href="contact.html" class="btn btn-gold">
+                Request a Quote
+            </a>
+
+            <a href="index.html" class="btn btn-outline">
+                Back to Home
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+/* ---------------- CTA ---------------- */
+
+.cta{
+
+    background:linear-gradient(135deg,#0A2036,#12365A);
+
+    color:white;
+
+    text-align:center;
+
+    padding:100px 20px;
+
+}
+
+.cta h2{
+
+    font-family:Fraunces,serif;
+
+    font-size:48px;
+
+    margin-bottom:20px;
+
+}
+
+.cta p{
+
+    max-width:720px;
+
+    margin:0 auto 40px;
+
+    color:#ddd;
+
+    font-size:18px;
+
+}
+
+.cta-buttons{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:20px;
+
+    flex-wrap:wrap;
+
+}
+
+.btn-outline{
+
+    border:2px solid white;
+
+    color:white;
+
+    padding:14px 28px;
+
+    transition:.3s;
+
+}
+
+.btn-outline:hover{
+
+    background:white;
+
+    color:#0A2036;
+
+}
+
+<footer>
+
+    © 2026 Rajson Impex • Premium Agricultural Exports from India
+
+</footer>
+
+    © 2026 Rajson Impex • Premium Agricultural Exports from India
+
+</footer>
+
+</body>
+</html>

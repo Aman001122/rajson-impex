@@ -1,0 +1,1012 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="icon" type="image/png" href="assets/logo/favicon.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Rajson Impex</title>
+    <meta name="description" content="Learn about Rajson Impex, our commitment to quality, trusted sourcing, and worldwide export of premium agricultural products.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <style>
+        html{
+    scroll-behavior:smooth;
+}
+
+        :root{
+            --navy:#0A2036;
+            --gold:#C6A15B;
+            --light:#F7F6F2;
+            --text:#222;
+            --muted:#666;
+            --border:#E6E2DA;
+        }
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
+        body{
+            font-family:Inter,sans-serif;
+            color:var(--text);
+            background:#fff;
+            line-height:1.6;
+        }
+
+        img{
+            width:100%;
+            display:block;
+        }
+
+        a{
+            text-decoration:none;
+            color:inherit;
+        }
+
+        .container{
+            width:min(1180px,90%);
+            margin:auto;
+        }
+
+        /* ---------------- NAVBAR ---------------- */
+
+        .navbar{
+
+            position:fixed;
+
+            top:0;
+
+            width:100%;
+
+            z-index:1000;
+
+            background:rgba(10,32,54,.94);
+
+            backdrop-filter:blur(12px);
+
+        }
+
+        .navbar .container{
+
+            display:flex;
+
+            justify-content:space-between;
+
+            align-items:center;
+
+            height:78px;
+
+        }
+
+        .logo{
+
+            display:flex;
+
+            align-items:center;
+
+            gap:12px;
+
+            color:#fff;
+
+            font-family:Fraunces,serif;
+
+            font-size:26px;
+
+        }
+
+        .logo img{
+
+            width:42px;
+
+        }
+
+        .nav-links{
+
+            display:flex;
+
+            list-style:none;
+
+            gap:34px;
+
+        }
+
+        .nav-links a{
+
+            color:white;
+
+            font-size:15px;
+
+            transition:.3s;
+
+        }
+
+        .nav-links a:hover{
+
+            color:var(--gold);
+
+        }
+        .nav-links a.active{
+
+    color:var(--gold);
+
+    font-weight:700;
+
+}
+
+.nav-links a.active::after{
+
+    content:"";
+
+    display:block;
+
+    width:100%;
+
+    height:2px;
+
+    background:var(--gold);
+
+    margin-top:6px;
+
+}
+
+        .quote-btn{
+
+            padding:12px 24px;
+
+            background:var(--gold);
+
+            color:var(--navy);
+
+            font-weight:600;
+
+        }
+
+        /* ---------------- HERO ---------------- */
+
+        .hero{
+
+            padding:170px 0 90px;
+
+            background:linear-gradient(180deg,#102943,#0A2036);
+
+            color:white;
+
+            text-align:center;
+
+        }
+
+        .hero small{
+
+            letter-spacing:2px;
+
+            color:#D8C18E;
+
+            font-weight:700;
+
+        }
+
+        .hero h1{
+
+            margin-top:18px;
+
+            font-family:Fraunces,serif;
+
+            font-size:58px;
+
+        }
+
+        .hero p{
+
+            max-width:760px;
+
+            margin:25px auto 0;
+
+            color:#d8d8d8;
+
+            font-size:18px;
+
+        }
+
+        /* ---------------- PRODUCTS ---------------- */
+
+        .products{
+
+            padding:90px 0;
+
+            background:var(--light);
+
+        }
+
+        .grid{
+
+            display:grid;
+
+            grid-template-columns:repeat(2,1fr);
+
+            gap:40px;
+
+        }
+
+        .card{
+
+            background:white;
+
+            border:1px solid var(--border);
+
+            overflow:hidden;
+
+            transition:.35s;
+
+        }
+
+        .card:hover{
+
+            transform:translateY(-8px);
+
+            box-shadow:0 25px 50px rgba(0,0,0,.12);
+
+        }
+
+        .card-image{
+
+            height:340px;
+
+            overflow:hidden;
+
+        }
+
+        .card-image img{
+
+            height:100%;
+
+            object-fit:cover;
+
+            transition:.5s;
+
+        }
+
+        .card:hover img{
+
+            transform:scale(1.05);
+
+        }
+
+        .card-content{
+
+            padding:34px;
+
+        }
+
+        .card h2{
+
+            font-family:Fraunces,serif;
+
+            margin-bottom:16px;
+
+            color:var(--navy);
+
+        }
+
+        .card p{
+
+            color:var(--muted);
+
+            margin-bottom:28px;
+
+        }
+
+        .btn{
+
+            display:inline-block;
+
+            background:var(--navy);
+
+            color:white;
+
+            padding:14px 26px;
+
+            font-weight:600;
+
+        }
+
+        footer{
+
+            background:var(--navy);
+
+            color:white;
+
+            text-align:center;
+
+            padding:35px;
+
+        }
+
+        @media(max-width:900px){
+
+            .grid{
+
+                grid-template-columns:1fr;
+
+            }
+
+            .hero h1{
+
+                font-size:42px;
+
+            }
+
+            .nav-links{
+
+                display:none;
+
+            }
+
+        }
+        /* ---------------- STORY ---------------- */
+
+.about-story{
+
+    padding:100px 0;
+
+    background:white;
+
+}
+
+.story-grid{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:60px;
+
+    align-items:center;
+
+}
+
+.story-image img{
+
+    width:100%;
+
+    border-radius:10px;
+
+    box-shadow:0 20px 50px rgba(0,0,0,.12);
+
+}
+
+.story-content small{
+
+    color:var(--gold);
+
+    font-weight:700;
+
+    letter-spacing:2px;
+
+}
+
+.story-content h2{
+
+    font-family:Fraunces,serif;
+
+    font-size:46px;
+
+    color:var(--navy);
+
+    margin:20px 0;
+
+}
+
+.story-content p{
+
+    color:#666;
+
+    margin-bottom:20px;
+
+    line-height:1.8;
+
+}
+
+@media(max-width:900px){
+
+    .story-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+/* ---------------- MISSION ---------------- */
+
+.mission{
+
+    background:#F8F8F8;
+
+    padding:100px 0;
+
+}
+
+.mission-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:35px;
+
+}
+
+.mission-card{
+
+    background:white;
+
+    padding:45px;
+
+    border-radius:10px;
+
+    box-shadow:0 15px 40px rgba(0,0,0,.08);
+
+    transition:.3s;
+
+}
+
+.mission-card:hover{
+
+    transform:translateY(-8px);
+
+}
+
+.mission-card h2{
+
+    font-family:Fraunces,serif;
+
+    color:var(--navy);
+
+    margin-bottom:18px;
+
+}
+
+.mission-card p{
+
+    color:#666;
+
+    line-height:1.8;
+
+}
+
+@media(max-width:900px){
+
+    .mission-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+/* ---------------- WHY ---------------- */
+
+.why{
+
+    padding:90px 0;
+
+    background:white;
+
+}
+
+.section-title{
+
+    text-align:center;
+
+    margin-bottom:60px;
+
+}
+
+.section-title small{
+
+    color:var(--gold);
+
+    letter-spacing:2px;
+
+    font-weight:700;
+
+}
+
+.section-title h2{
+
+    font-family:Fraunces,serif;
+
+    font-size:46px;
+
+    margin-top:16px;
+
+    color:var(--navy);
+
+}
+
+.why-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:30px;
+
+}
+
+.why-card{
+
+    background:white;
+
+    border:1px solid var(--border);
+
+    border-radius:10px;
+
+    padding:35px;
+
+    transition:.3s;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.05);
+
+}
+
+.why-card:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:0 20px 40px rgba(0,0,0,.08);
+
+}
+
+.why-card h3{
+
+    font-family:Fraunces,serif;
+
+    color:var(--navy);
+
+    margin-bottom:14px;
+
+}
+
+.why-card p{
+
+    color:var(--muted);
+
+    line-height:1.8;
+
+}
+
+@media(max-width:900px){
+
+    .why-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+/* ---------------- CTA ---------------- */
+
+.cta{
+
+    background:linear-gradient(135deg,#0A2036,#12365A);
+
+    color:white;
+
+    text-align:center;
+
+    padding:100px 20px;
+
+}
+
+.cta h2{
+
+    font-family:Fraunces,serif;
+
+    font-size:48px;
+
+    margin-bottom:20px;
+
+}
+
+.cta p{
+
+    max-width:720px;
+
+    margin:0 auto 40px;
+
+    color:#ddd;
+
+    font-size:18px;
+
+}
+
+.cta-buttons{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:20px;
+
+    flex-wrap:wrap;
+
+}
+
+.btn-outline{
+
+    border:2px solid white;
+
+    color:white;
+
+    padding:14px 28px;
+
+    transition:.3s;
+
+}
+
+.btn-outline:hover{
+
+    background:white;
+
+    color:#0A2036;
+
+}
+
+
+/* ---------------- TIMELINE ---------------- */
+
+/* ---------------- TIMELINE ---------------- */
+
+.timeline{
+
+    padding:100px 0;
+
+    background:white;
+
+    text-align:center;
+
+}
+
+.timeline small{
+
+    color:var(--gold);
+
+    font-weight:700;
+
+    letter-spacing:2px;
+
+}
+
+.timeline h2{
+
+    font-family:Fraunces,serif;
+
+    color:var(--navy);
+
+    font-size:46px;
+
+    margin:18px 0 50px;
+
+}
+
+.timeline-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(5,1fr);
+
+    gap:25px;
+
+}
+
+.step{
+
+    padding:30px;
+
+}
+
+.number{
+
+    width:70px;
+
+    height:70px;
+
+    margin:auto;
+
+    border-radius:50%;
+
+    background:var(--gold);
+
+    color:var(--navy);
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-weight:700;
+
+    font-size:26px;
+
+    margin-bottom:20px;
+
+}
+
+.step h3{
+
+    color:var(--navy);
+
+    margin-bottom:12px;
+
+    font-family:Fraunces,serif;
+
+}
+
+.step p{
+
+    color:#666;
+
+}
+
+@media(max-width:1000px){
+
+    .timeline-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+    </style>
+
+</head>
+
+<body>
+
+<nav class="navbar">
+
+    <div class="container">
+
+        <a class="logo" href="index.html">
+
+            <img src="assets/logo/logo.png" alt="Rajson Impex">
+
+            <span>Rajson Impex</span>
+
+        </a>
+
+        <ul class="nav-links">
+
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html" class="active">About</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="contact.html">Contact</a></li>
+
+        </ul>
+
+        <a href="contact.html" class="quote-btn">Get Quote</a>
+
+    </div>
+
+</nav>
+
+<section class="hero">
+
+    <div class="container">
+
+        <small>ABOUT US</small>
+
+        <h1>Rajson Impex
+            Premium Agricultural Exporter</h1>
+
+        <p>
+            Rajson Impex is committed to supplying
+            premium-quality Indian agricultural products
+            to customers worldwide.
+
+            With a focus on quality, reliability,
+            and customer satisfaction, we work closely
+            with trusted farmers and modern processing
+            facilities to deliver products that meet
+            international export standards.
+        </p>
+
+    </div>
+
+</section>
+
+<section class="about-story">
+
+    <div class="container story-grid">
+
+        <div class="story-image">
+
+            <img src="assets/images/about.jpg"
+                 alt="Rajson Impex">
+
+        </div>
+
+        <div class="story-content">
+
+            <small>OUR STORY</small>
+
+            <h2>
+                Delivering Quality Agricultural Products Across the Globe
+            </h2>
+
+            <p>
+
+                Rajson Impex is dedicated to exporting premium-quality
+                Indian agricultural products to international markets.
+                We believe in building long-term relationships through
+                quality, transparency, and reliability.
+
+            </p>
+
+            <p>
+
+                Working closely with trusted farmers and processing
+                facilities, we ensure every shipment meets international
+                quality standards before reaching our customers.
+
+            </p>
+
+            <p>
+
+                From sourcing to packaging and global shipping,
+                every step is carefully managed to deliver products
+                our customers can trust.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+<section class="mission">
+
+    <div class="container">
+
+        <div class="mission-grid">
+
+            <div class="mission-card">
+
+                <h2>Our Mission</h2>
+
+                <p>
+
+                    To provide premium-quality agricultural products
+                    that consistently meet international standards while
+                    building long-term relationships through trust,
+                    transparency and reliable service.
+
+                </p>
+
+            </div>
+
+            <div class="mission-card">
+
+                <h2>Our Vision</h2>
+
+                <p>
+
+                    To become a globally recognized exporter of Indian
+                    agricultural products by delivering exceptional
+                    quality, ethical sourcing and dependable customer
+                    service.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+</section>
+
+<section class="timeline">
+
+    <div class="container">
+
+        <small>OUR PROCESS</small>
+
+        <h2>From Farm to Global Markets</h2>
+
+        <div class="timeline-grid">
+
+            <div class="step">
+                <div class="number">1</div>
+                <h3>Sourcing</h3>
+                <p>Groundnuts are sourced from trusted farmers.</p>
+            </div>
+
+            <div class="step">
+                <div class="number">2</div>
+                <h3>Cleaning</h3>
+                <p>Products are cleaned and carefully graded.</p>
+            </div>
+
+            <div class="step">
+                <div class="number">3</div>
+                <h3>Quality Check</h3>
+                <p>Every batch is inspected before packaging.</p>
+            </div>
+
+            <div class="step">
+                <div class="number">4</div>
+                <h3>Packaging</h3>
+                <p>Packed securely for international shipment.</p>
+            </div>
+
+            <div class="step">
+                <div class="number">5</div>
+                <h3>Export</h3>
+                <p>Delivered efficiently to customers worldwide.</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="why">
+
+
+<section class="cta">
+
+    <div class="container">
+
+        <h2>
+            Ready to Import Premium Groundnuts?
+        </h2>
+
+        <p>
+
+            Whether you're a wholesaler, food manufacturer,
+            distributor or importer, Rajson Impex is ready
+            to supply premium export-quality groundnuts
+            tailored to your requirements.
+
+        </p>
+
+        <div class="cta-buttons">
+
+            <a href="contact.html" class="btn btn-gold">
+                Request a Quote
+            </a>
+
+            <a href="index.html" class="btn btn-outline">
+                Back to Home
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<footer>
+
+    © 2026 Rajson Impex • Premium Agricultural Exports from India
+
+</footer>
+
+
+
+</body>
+</html>
