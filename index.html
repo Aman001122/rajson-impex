@@ -247,11 +247,19 @@
 }
   .about-figure img{
 
+    width:108%;
+
     display:block;
 
-    width:100%;
+    cursor:zoom-in;
 
-    height:auto;
+    transition:.3s;
+
+}
+
+.about-figure img:hover{
+
+    transform:scale(1.02);
 
 }
   .about-figure .tag{
@@ -660,6 +668,49 @@ body.menu-open{
     overflow:hidden;
 
 }
+
+
+.image-modal{
+
+    display:none;
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.9);
+
+    z-index:99999;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+.image-modal img{
+
+    max-width:92%;
+
+    max-height:92%;
+
+}
+
+.close-image{
+
+    position:absolute;
+
+    top:20px;
+
+    right:35px;
+
+    color:white;
+
+    font-size:42px;
+
+    cursor:pointer;
+
+}
 </style>
 </head>
 <body>
@@ -722,18 +773,18 @@ body.menu-open{
         <text class="route-label" x="188" y="192">UAE</text>
 
         <!-- Turkey -->
-        <path class="route-line" d="M290,230 Q230,140 175,120"/>
-        <circle class="node" cx="175" cy="120" r="3"/>
-        <text class="route-label" x="138" y="116">TURKEY</text>
+<path class="route-line" d="M290,230 Q230,175 180,155"/>
+<circle class="node" cx="180" cy="155" r="3"/>
+<text class="route-label" x="145" y="150">TURKEY</text>
 
-        <!-- Germany / UK -->
-        <path class="route-line" d="M290,230 Q180,110 95,75"/>
-        <circle class="node" cx="95" cy="75" r="3"/>
-        <text class="route-label" x="58" y="70">GERMANY</text>
-
-        <path class="route-line" d="M290,230 Q150,90 45,55"/>
-        <circle class="node" cx="45" cy="55" r="3"/>
-        <text class="route-label" x="8" y="48">UK</text>
+        <!-- Germany -->
+<path class="route-line" d="M290,230 Q195,125 115,90"/>
+<circle class="node" cx="115" cy="90" r="3"/>
+<text class="route-label" x="80" y="102">GERMANY</text> 
+        <!-- UK -->
+<path class="route-line" d="M290,230 Q185,95 85,40"/>
+<circle class="node" cx="85" cy="40" r="3"/>
+<text class="route-label" x="68" y="33">UK</text>
 
         <!-- USA -->
         <path class="route-line" d="M290,230 Q140,150 30,190"/>
@@ -741,9 +792,20 @@ body.menu-open{
         <text class="route-label" x="-6" y="212">USA</text>
 
         <!-- Vietnam -->
-        <path class="route-line" d="M290,230 Q360,270 420,300"/>
-        <circle class="node" cx="420" cy="300" r="3"/>
-        <text class="route-label" x="428" y="304">VIETNAM</text>
+<path class="route-line" d="M290,230 Q355,240 375,265"/>
+<circle class="node" cx="375" cy="265" r="3"/>
+<text class="route-label" x="382" y="270">VIETNAM</text>
+
+        <!-- China -->
+<path class="route-line" d="M290,230 Q345,185 385,175"/>
+<circle class="node" cx="385" cy="175" r="3"/>
+<text class="route-label" x="392" y="170">CHINA</text>
+
+
+        <!-- Australia -->
+<path class="route-line" d="M290,230 Q380,300 470,355"/>
+<circle class="node" cx="470" cy="355" r="3"/>
+<text class="route-label" x="478" y="360">AUSTRALIA</text>
 
         <!-- faint world dot grid -->
         <g opacity="0.12">
@@ -766,11 +828,13 @@ body.menu-open{
 <section class="about section" id="about">
   <div class="wrap about-grid">
     <div class="reveal about-figure">
-      <img src="assets/images/about.jpg"
-     alt="Rajson Impex"
-     loading="lazy">
-      <div class="tag">Est. Jaipur, Rajasthan · India</div>
-    </div>
+    <img src="assets/images/about.jpg"
+         alt="Rajson Impex"
+         loading="lazy"
+         id="aboutImage">
+
+    <div class="tag">Est. Jaipur, Rajasthan · India</div>
+</div>
     <div class="about-body">
       <p class="reveal label">About Rajson Impex</p>
       <h2 class="reveal">An export house built on precision, not volume.</h2>
@@ -1152,10 +1216,51 @@ window.addEventListener("load",()=>{
 
         },600);
 
-    },900);
+    },690);
 
 });
 </script>
+<div id="imageModal" class="image-modal">
 
+    <span class="close-image">&times;</span>
+
+    <img id="modalImage">
+
+</div>
+<script>
+
+const aboutImage=document.getElementById("aboutImage");
+
+const modal=document.getElementById("imageModal");
+
+const modalImg=document.getElementById("modalImage");
+
+const close=document.querySelector(".close-image");
+
+aboutImage.onclick=()=>{
+
+    modal.style.display="flex";
+
+    modalImg.src=aboutImage.src;
+
+}
+
+close.onclick=()=>{
+
+    modal.style.display="none";
+
+}
+
+modal.onclick=(e)=>{
+
+    if(e.target===modal){
+
+        modal.style.display="none";
+
+    }
+
+}
+
+</script>
 </body>
 </html>

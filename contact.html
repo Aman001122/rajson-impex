@@ -452,11 +452,32 @@
 
 .contact-form input,
 .contact-form textarea,
+.contact-form input,
+.contact-form textarea{
+
+    width:100%;
+
+    padding:15px;
+
+    border:1px solid #ddd;
+
+    border-radius:6px;
+
+    font-size:16px;
+
+    font-family:inherit;
+
+    background:#fff;
+
+    color:#333;
+}
 .contact-form select{
 
     width:100%;
 
     padding:15px;
+
+    padding-right:50px;
 
     border:1px solid #ddd;
 
@@ -479,9 +500,6 @@
     background-repeat:no-repeat;
 
     background-position:right 16px center;
-
-    padding-right:50px;
-
 }
 
 .contact-form button{
@@ -661,8 +679,203 @@
 
 }
 
-    </style>
 
+
+
+.btn-outline:hover{
+
+    background:white;
+
+    color:#0A2036;
+
+}
+
+/* ================= BUSINESS CONTACT ================= */
+
+.contact-card{
+
+    margin-top:20px;
+
+}
+
+.contact-card p{
+
+    margin:12px 0;
+
+    font-size:17px;
+
+    line-height:1.6;
+
+}
+
+.contact-card a{
+
+    color:#0A2036;
+
+    text-decoration:none;
+
+    transition:.3s;
+
+}
+
+.contact-card a:hover{
+
+    color:#C8A04D;
+
+}
+
+
+/* ================= BUSINESS RESOURCES ================= */
+
+.business-resources{
+
+    margin-top:60px;
+
+    padding-top:35px;
+
+    border-top:1px solid rgba(200,160,77,.25);
+
+}
+
+.business-resources h3{
+
+    font-size:24px;
+
+    color:#0A2036;
+
+    margin-bottom:14px;
+
+    font-family:Fraunces,serif;
+
+}
+
+.resource-text{
+    
+
+    color:#666;
+    font-size:16px;
+
+    line-height:1.7;
+
+    max-width:620px;
+
+    margin-bottom:35px;
+
+}
+
+.resource-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:24px;
+
+}
+
+.resource-card{
+
+    background:#fff;
+
+    border:1px solid #e7e7e7;
+
+    border-radius:18px;
+
+    padding:20px;
+
+    text-align:center;
+
+    text-decoration:none;
+
+    transition:.3s;
+
+    color:#0A2036;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.04);
+    min-height:180px;
+
+}
+
+.resource-card:hover{
+
+    transform:translateY(-6px);
+
+    border-color:#C8A04D;
+
+    box-shadow:0 20px 40px rgba(0,0,0,.10);
+
+}
+
+.resource-icon{
+
+    width:56px;
+
+    height:56px;
+
+    margin:auto;
+
+    border-radius:50%;
+
+    background:#0A2036;
+
+    color:#C8A04D;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:22px;
+
+    margin-bottom:20px;
+
+}
+
+.resource-card h4{
+
+    margin-bottom:6px;
+
+    font-size:18px;
+
+    font-family:Fraunces,serif;
+
+}
+
+.resource-card p{
+
+    color:#666;
+
+    font-size:14px;
+
+    line-height:1.6;
+
+}
+
+@media(max-width:900px){
+
+.resource-grid{
+
+grid-template-columns:1fr;
+
+}
+
+}
+
+</style>|
+
+
+
+
+
+
+
+
+
+
+<link
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">    
 </head>
 
 <body>
@@ -770,13 +983,89 @@
 
     <h3>Business Contact</h3>
 
+    <div class="contact-card">
+
     <p><strong>Mr. Rajendra Jakhar</strong></p>
 
     <p>Founder & Export Director</p>
 
-    <p>rajsonimpex.export@gmail.com</p>
+    <p>
+        
+        <a href="mailto:rajsonimpex.export@gmail.com">
+            rajsonimpex.export@gmail.com
+        </a>
+    </p>
 
-    <p>+91 9829017198</p>
+    <p>
+        
+        <a href="tel:+919829017198">
+            +91 98290 17198
+        </a>
+    </p>
+
+    <p>
+        Mon – Sat | 9:00 AM – 6:00 PM (IST)
+    </p>
+
+</div>
+
+
+<section class="business-resources">
+
+    <h3>Rajson Impex Verified Resources</h3>
+
+    <p class="resource-text">
+        Download our official business identity and verified contact
+        information for future business communication.
+    </p>
+
+    <div class="resource-grid">
+
+        <a href="assets/downloads/rajsonimpex.pdf"
+           download
+           class="resource-card">
+
+            <div class="resource-icon">
+                <i class="fa-solid fa-file-pdf"></i>
+            </div>
+
+            <h4>Download PDF</h4>
+
+            <p>Printable Business Card</p>
+
+        </a>
+
+        <a href="assets/downloads/rajsonimpex.png"
+           download
+           class="resource-card">
+
+            <div class="resource-icon">
+                <i class="fa-solid fa-image"></i>
+            </div>
+
+            <h4>Download PNG</h4>
+
+            <p>Digital Business Card</p>
+
+        </a>
+
+        <a href="assets/downloads/rajsonimpex.vcf"
+           download
+           class="resource-card">
+
+            <div class="resource-icon">
+                <i class="fa-solid fa-address-card"></i>
+            </div>
+
+            <h4>Save Contact</h4>
+
+            <p>Android & iPhone</p>
+
+        </a>
+
+    </div>
+
+</section>
 
 </div>
 
