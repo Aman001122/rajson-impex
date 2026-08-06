@@ -117,7 +117,35 @@ p{
     background:#12365A;
 
 }
+.reference-box{
+    margin:35px auto;
+    padding:25px;
+    max-width:500px;
+    background:#f8f9fb;
+    border:2px solid #C8A04D;
+    border-radius:12px;
+    text-align:center;
+}
 
+.reference-box h3{
+    color:#0A2036;
+    margin-bottom:15px;
+    font-size:22px;
+}
+
+#referenceNumber{
+    font-size:34px;
+    font-weight:700;
+    color:#0A2036;
+    letter-spacing:3px;
+    margin-bottom:15px;
+}
+
+.reference-note{
+    color:#666;
+    font-size:15px;
+    line-height:1.6;
+}
 </style>
 
 </head>
@@ -134,9 +162,23 @@ p{
 
 Your inquiry has been received successfully.
 
-Our team will review your request and get back to you within 24 hours.
+<br><br>
+
+Our team will review your request and get back to you within 24 business hours.
 
 </p>
+
+<div class="reference-box">
+
+    <h3>Your Reference Number</h3>
+
+    <div id="referenceNumber">RI-XXXXXX</div>
+
+    <p class="reference-note">
+        Please save your Reference Number. It may be valuable for future correspondence regarding your inquiry.
+    </p>
+
+</div>
 
 <a href="index.html" class="btn">
 
@@ -145,6 +187,19 @@ Return to Home
 </a>
 
 </div>
+<script>
+
+const params = new URLSearchParams(window.location.search);
+
+const reference = params.get("ref");
+
+if (reference) {
+
+    document.getElementById("referenceNumber").textContent = reference;
+
+}
+
+</script>
 
 </body>
 

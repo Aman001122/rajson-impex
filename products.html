@@ -515,7 +515,46 @@
     color:#0A2036;
 
 }
+
+
+.brochure-btn{
+
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+
+    margin-top:15px;
+
+    padding:10px 18px;
+
+    border:1px solid var(--gold);
+
+    border-radius:8px;
+
+    background:#fff;
+
+    color:var(--navy);
+
+    font-size:14px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.brochure-btn:hover{
+
+    background:var(--navy);
+
+    color:#fff;
+
+}
     </style>
+
+<link
+    rel="stylesheet"
+    href="https://unpkg.com/aos@2.3.4/dist/aos.css">
 
 </head>
 
@@ -547,7 +586,7 @@
 
 </nav>
 
-<section class="hero">
+<section class="hero" data-aos="fade-up">
 
     <div class="container">
 
@@ -564,7 +603,7 @@
 
 </section>
 
-<section class="products">
+<section class="products" data-aos="fade-up">
 
     <div class="container">
 
@@ -588,6 +627,13 @@
                     <a href="products/java-groundnut.html" class="btn">
                         View Details
                     </a>
+                    <a href="assets/brochures/java-groundnuts.pdf"
+                        download
+                        class="brochure-btn">
+
+                            📄 Download Brochure
+
+                        </a>
 
                 </div>
 
@@ -604,13 +650,21 @@
                     <h2>Bold Groundnut</h2>
 
                     <p>
-                        Large premium kernels ideal for roasting, snacks,
-                        confectionery and international wholesale markets.
-                    </p>
+    Large premium kernels ideal for roasting, snacks,
+    confectionery and international wholesale markets.
+</p>
 
-                    <a href="products/bold-groundnut.html" class="btn">
-                        View Details
-                    </a>
+<a href="products/bold-groundnut.html" class="btn">
+    View Details
+</a>
+
+<a href="assets/brochures/bold-groundnuts.pdf"
+   download
+   class="brochure-btn">
+
+    📄 Download Brochure
+
+</a>
 
                 </div>
 
@@ -622,7 +676,7 @@
 
 </section>
 
-<section class="why">
+<section class="why" data-aos="fade-up">
 
     <div class="container">
 
@@ -686,7 +740,7 @@
 
 </section>
 
-<section class="cta">
+<section class="cta" data-aos="fade-up">
 
     <div class="container">
 
@@ -726,7 +780,21 @@
 
 </footer>
 
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 
+<script>
+
+AOS.init({
+
+    duration:900,
+
+    once:true,
+
+    easing:"ease-out"
+
+});
+
+</script>
 
 </body>
 </html>

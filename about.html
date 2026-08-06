@@ -822,6 +822,10 @@
 
     </style>
 
+
+<link
+    rel="stylesheet"
+    href="https://unpkg.com/aos@2.3.4/dist/aos.css">
 </head>
 
 <body>
@@ -852,7 +856,7 @@
 
 </nav>
 
-<section class="hero">
+<section class="hero" data-aos="fade-up">
 
     <div class="container">
 
@@ -877,7 +881,7 @@
 
 </section>
 
-<section class="about-story">
+<section class="about-story" data-aos="fade-up">
 
     <div class="container story-grid">
 
@@ -927,7 +931,7 @@
 </section>
 
 
-<section class="founder-section">
+<section class="founder-section" data-aos="fade-up">
     <div class="container">
 
         <h2>Meet the Founder</h2>
@@ -965,7 +969,7 @@
 </div>
 </div>
 </section>
-<section class="mission">
+<section class="mission" data-aos="fade-up">
 
     <div class="container">
 
@@ -1009,7 +1013,7 @@
 
 </section>
 
-<section class="timeline">
+<section class="timeline" data-aos="fade-up">
 
     <div class="container">
 
@@ -1058,7 +1062,7 @@
 <section class="why">
 
 
-<section class="cta">
+<section class="cta" data-aos="fade-up">
 
     <div class="container">
 
@@ -1139,6 +1143,21 @@ aboutImageModal.onclick = (e) => {
     }
 
 };
+
+</script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+<script>
+
+AOS.init({
+
+    duration:900,
+
+    once:true,
+
+    easing:"ease-out"
+
+});
 
 </script>
 

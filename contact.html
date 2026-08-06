@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+    
     <link rel="icon" type="image/png" href="assets/logo/favicon.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -861,7 +862,18 @@ grid-template-columns:1fr;
 }
 
 }
+.contact-form,
+.contact-form h2,
+.contact-form label,
+.contact-form input,
+.contact-form textarea,
+.contact-form select,
+.contact-form button,
+.contact-form small {
 
+    font-family: "Manrope", sans-serif;
+
+}
 </style>|
 
 
@@ -876,6 +888,13 @@ grid-template-columns:1fr;
 <link
 rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">    
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+
+<link
+    rel="stylesheet"
+    href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+
 </head>
 
 <body>
@@ -907,7 +926,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 
 </nav>
 
-<section class="hero">
+<section class="hero" data-aos="fade-up">
 
     <div class="container">
 
@@ -925,7 +944,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 
 </section>
 
-<section class="contact-section">
+<section class="contact-section" data-aos="fade-up">
 
     <div class="container contact-grid">
 
@@ -1077,6 +1096,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
       method="POST">
 
                 <input type="hidden" name="access_key" value="16eefa28-3ecf-4542-9145-f1b00d9350e2">
+                <input type="hidden" id="reference_number" name="reference_number">
                 <input type="hidden" name="from_name" value="Rajson Impex Website">
                 <input type="hidden" name="subject" value="New Export Inquiry | Rajson Impex">
 
@@ -1084,7 +1104,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 
                 
 
-                <input type="hidden" name="redirect" value="http://127.0.0.1:5500/thankyou.html">
+                <input type="hidden" id="redirectField" name="redirect">
 
                 <input
                     type="text"
@@ -1125,10 +1145,44 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 
                 </select>
 
-                <input
-                    type="text"
+
+
+
+                
+                <select
                     name="quantity"
-                    placeholder="Quantity Required (e.g. 20 MT)">
+                    id="quantity"
+                    required>
+
+                    <option value="">Select Quantity</option>
+
+                    <option value="5 MT">5 MT</option>
+                    <option value="10 MT">10 MT</option>
+                    <option value="20 MT">20 MT</option>
+                    <option value="25 MT">25 MT</option>
+                    <option value="50 MT">50 MT</option>
+                    <option value="100 MT">100 MT</option>
+                    <option value="250 MT">250 MT</option>
+                    <option value="500 MT">500 MT</option>
+                    <option value="1 Container">1 Container</option>
+                    <option value="2 Containers">2 Containers</option>
+                    <option value="Custom Quantity">Custom Quantity</option>
+
+                </select>
+
+                <div id="customQuantityGroup" style="display:none; margin-top:15px;">
+
+                    <input
+                        type="text"
+                        id="customQuantity"
+                        name="custom_quantity"
+                        placeholder="Enter Custom Quantity (e.g. 32 MT, 2500 Kg)">
+
+                </div>
+
+
+
+
 
                 <input
                     type="text"
@@ -1157,7 +1211,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 
 </section>
 
-<section class="why">
+<section class="why" data-aos="fade-up">
 
     <div class="container">
 
@@ -1221,7 +1275,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 
 </section>
 
-<section class="cta">
+<section class="cta" data-aos="fade-up">
 
     <div class="container">
 
@@ -1270,6 +1324,83 @@ if (product) {
     document.getElementById("product").value = product;
 }
 </script>
+<script>
 
+const form = document.querySelector("form");
+
+function generateReferenceNumber() {
+
+    const characters =
+        "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
+
+    let randomPart = "";
+
+    for (let i = 0; i < 6; i++) {
+
+        randomPart += characters.charAt(
+            Math.floor(Math.random() * characters.length)
+        );
+
+    }
+
+    return "RI-" + randomPart;
+
+}
+
+form.addEventListener("submit", function () {
+
+    const reference = generateReferenceNumber();
+
+    document.getElementById("reference_number").value = reference;
+
+    document.getElementById("redirectField").value =
+        window.location.origin +
+        "/thankyou.html?ref=" +
+        encodeURIComponent(reference);
+
+});
+
+const quantity = document.getElementById("quantity");
+
+const customQuantityGroup = document.getElementById("customQuantityGroup");
+
+const customQuantity = document.getElementById("customQuantity");
+
+quantity.addEventListener("change", function () {
+
+    if (this.value === "Custom Quantity") {
+
+        customQuantityGroup.style.display = "block";
+
+        customQuantity.required = true;
+
+    } else {
+
+        customQuantityGroup.style.display = "none";
+
+        customQuantity.required = false;
+
+        customQuantity.value = "";
+
+    }
+
+});
+
+</script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+<script>
+
+AOS.init({
+
+    duration:900,
+
+    once:true,
+
+    easing:"ease-out"
+
+});
+
+</script>
 </body>
 </html>
