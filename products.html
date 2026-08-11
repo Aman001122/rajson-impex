@@ -236,23 +236,25 @@
         }
 
         .card{
+            position:relative;
 
             background:white;
-
             border:1px solid var(--border);
-
             overflow:hidden;
 
-            transition:.35s;
-
+            transition:
+                transform .55s cubic-bezier(.2,.7,.2,1),
+                box-shadow .55s ease,
+                border-color .4s ease;
         }
 
         .card:hover{
+            transform:translateY(-9px);
 
-            transform:translateY(-8px);
+            box-shadow:
+                0 28px 55px rgba(10,32,54,.14);
 
-            box-shadow:0 25px 50px rgba(0,0,0,.12);
-
+            border-color:rgba(198,161,91,.35);
         }
 
         .card-image{
@@ -264,19 +266,18 @@
         }
 
         .card-image img{
-
             height:100%;
-
             object-fit:cover;
 
-            transition:.5s;
-
+            transition:
+                transform .8s cubic-bezier(.2,.7,.2,1),
+                filter .8s ease;
         }
 
         .card:hover img{
+            transform:scale(1.065);
 
-            transform:scale(1.05);
-
+            filter:saturate(1.05);
         }
 
         .card-content{
@@ -351,6 +352,60 @@
 
         }
 
+
+
+
+        /* ---------- Product Category Animation ---------- */
+
+.card-content h2,
+.card-content p,
+.card-content .btn,
+.card-content .brochure-btn{
+    transition:
+        transform .45s cubic-bezier(.2,.7,.2,1),
+        opacity .45s ease;
+}
+
+.card-content h2{
+    position:relative;
+}
+
+.card-content h2::after{
+    content:"";
+
+    display:block;
+
+    width:0;
+    height:2px;
+
+    margin-top:10px;
+
+    background:var(--gold);
+
+    transition:
+        width .5s cubic-bezier(.2,.7,.2,1);
+}
+
+.card:hover .card-content h2::after{
+    width:46px;
+}
+
+.card:hover .card-content h2{
+    transform:translateY(-2px);
+}
+
+.card:hover .card-content p{
+    transform:translateY(-2px);
+}
+
+.card:hover .card-content .btn{
+    transform:translateY(-3px);
+}
+
+.card:hover .card-content .brochure-btn{
+    transform:translateY(-2px);
+}
+
         /* ---------- WHY ---------- */
 
 .why{
@@ -402,21 +457,72 @@
 }
 
 .why-card{
+    position:relative;
 
     border:1px solid var(--border);
-
     padding:35px;
 
-    transition:.3s;
+    overflow:hidden;
 
+    transition:
+        transform .5s cubic-bezier(.2,.7,.2,1),
+        box-shadow .5s ease,
+        background .4s ease,
+        border-color .4s ease;
+}
+
+.why-card::before{
+    content:"";
+
+    position:absolute;
+
+    left:0;
+    bottom:0;
+
+    width:100%;
+    height:2px;
+
+    background:var(--gold);
+
+    transform:scaleX(0);
+    transform-origin:left;
+
+    transition:
+        transform .55s cubic-bezier(.2,.7,.2,1);
 }
 
 .why-card:hover{
+    transform:translateY(-7px);
 
-    transform:translateY(-6px);
+    background:#FCFBF8;
 
-    box-shadow:0 20px 40px rgba(0,0,0,.08);
+    border-color:rgba(198,161,91,.35);
 
+    box-shadow:
+        0 22px 42px rgba(10,32,54,.10);
+}
+
+.why-card:hover::before{
+    transform:scaleX(1);
+}
+
+
+
+.why-card h3,
+.why-card p{
+    transition:
+        transform .45s cubic-bezier(.2,.7,.2,1),
+        color .35s ease;
+}
+
+.why-card:hover h3{
+    transform:translateX(4px);
+
+    color:var(--navy);
+}
+
+.why-card:hover p{
+    transform:translateX(4px);
 }
 
 .why-card h3{

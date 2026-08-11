@@ -1,11 +1,12 @@
 BEGIN:VCARD
 VERSION:3.0
-N:Jakhar;Rajendra;;Mr.;
 FN:Mr. Rajendra Jakhar
+N:Jakhar;Rajendra;;;
 ORG:Rajson Impex
 TITLE:Founder & Export Director
-TEL;TYPE=CELL:+919829017198
-EMAIL:rajsonimpex.export@gmail.com
+EMAIL;TYPE=INTERNET:rajsonimpex.export@gmail.com
+TEL;TYPE=CELL,VOICE:+919829017198
 URL:https://www.rajsonimpex.in
-ADR:;;Jaipur;Rajasthan;;;India
+ADR;TYPE=WORK:;;Jaipur;Rajasthan;;India
+NOTE:Premium Agricultural Exports from India
 END:VCARD

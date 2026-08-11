@@ -396,6 +396,166 @@
   .map-wrap{position:relative;}
   .map-wrap svg{width:100%; height:auto;}
 
+
+
+  /* ---------- Interactive Export Map ---------- */
+
+.interactive-map{
+    overflow:visible;
+}
+
+/* Country route groups */
+.export-route{
+    cursor:pointer;
+    transition:opacity .35s ease;
+}
+
+/* Routes */
+.export-route .route-line{
+    transition:
+        opacity .35s ease,
+        stroke-width .35s ease,
+        filter .35s ease;
+}
+
+/* Destination dots */
+.destination-node{
+    fill: var(--gold-soft);
+    transition:
+        r .3s ease,
+        fill .3s ease,
+        filter .3s ease;
+}
+
+/* Country labels */
+.destination-label{
+    font-family: var(--font-mono);
+    font-size: 9.5px;
+    fill: rgba(255,255,255,.58);
+    letter-spacing:.04em;
+    transition:
+        fill .3s ease,
+        opacity .3s ease;
+    pointer-events:none;
+}
+
+/* Hover */
+.export-route:hover .route-line{
+    opacity:1;
+    stroke-width:1.8;
+    filter:drop-shadow(0 0 4px rgba(198,161,91,.45));
+}
+
+.export-route:hover .destination-node{
+    r:5;
+    fill:var(--gold);
+    filter:drop-shadow(0 0 6px rgba(198,161,91,.75));
+}
+
+.export-route:hover .destination-label{
+    fill:var(--gold-soft);
+}
+
+
+/* When one route is active,
+   dim the others */
+
+.interactive-map.has-active .export-route{
+    opacity:.28;
+}
+
+.interactive-map.has-active .export-route.active{
+    opacity:1;
+}
+
+.interactive-map.has-active .export-route.active .route-line{
+    opacity:1;
+    stroke-width:1.8;
+    filter:drop-shadow(0 0 4px rgba(198,161,91,.45));
+}
+
+.interactive-map.has-active .export-route.active .destination-node{
+    r:5;
+    fill:var(--gold);
+    filter:drop-shadow(0 0 7px rgba(198,161,91,.8));
+}
+
+.interactive-map.has-active .export-route.active .destination-label{
+    fill:var(--gold-soft);
+}
+
+
+/* ---------- Tooltip ---------- */
+
+.map-tooltip{
+    position:absolute;
+
+    left:50%;
+    top:50%;
+
+    transform:
+        translate(-50%, -130%)
+        translateY(8px);
+
+    min-width:145px;
+
+    padding:12px 16px;
+
+    background:rgba(7,21,38,.94);
+    border:1px solid rgba(198,161,91,.35);
+
+    box-shadow:
+        0 18px 40px rgba(0,0,0,.28);
+
+    backdrop-filter:blur(10px);
+    -webkit-backdrop-filter:blur(10px);
+
+    opacity:0;
+    visibility:hidden;
+
+    transition:
+        opacity .25s ease,
+        transform .25s ease,
+        visibility .25s ease;
+
+    pointer-events:none;
+
+    z-index:5;
+
+    text-align:center;
+}
+
+.map-tooltip.visible{
+    opacity:1;
+    visibility:visible;
+
+    transform:
+        translate(-50%, -130%)
+        translateY(0);
+}
+
+.map-tooltip-country{
+    display:block;
+
+    font-family:var(--font-mono);
+    font-size:11px;
+
+    letter-spacing:.08em;
+    text-transform:uppercase;
+
+    color:var(--gold-soft);
+}
+
+.map-tooltip-text{
+    display:block;
+
+    margin-top:4px;
+
+    font-size:12px;
+
+    color:rgba(255,255,255,.58);
+}
+
   /* ---------- Export process ---------- */
   .process{background: var(--gray-light);}
   .process-track{margin-top:70px; position:relative;}
@@ -1237,33 +1397,131 @@ body.menu-open{
       </ul>
       
     </div>
+    
+    
+    
     <div class="map-wrap reveal reveal-delay-1">
-      <svg viewBox="0 0 500 420" aria-hidden="true">
-        <g opacity="0.18">
-          <circle cx="40" cy="80" r="1.6" fill="#fff"/><circle cx="70" cy="60" r="1.6" fill="#fff"/>
-          <circle cx="100" cy="90" r="1.6" fill="#fff"/><circle cx="140" cy="70" r="1.6" fill="#fff"/>
-          <circle cx="180" cy="100" r="1.6" fill="#fff"/><circle cx="220" cy="80" r="1.6" fill="#fff"/>
-          <circle cx="260" cy="60" r="1.6" fill="#fff"/><circle cx="300" cy="90" r="1.6" fill="#fff"/>
-          <circle cx="340" cy="70" r="1.6" fill="#fff"/><circle cx="380" cy="100" r="1.6" fill="#fff"/>
-          <circle cx="420" cy="80" r="1.6" fill="#fff"/><circle cx="60" cy="160" r="1.6" fill="#fff"/>
-          <circle cx="110" cy="180" r="1.6" fill="#fff"/><circle cx="160" cy="150" r="1.6" fill="#fff"/>
-          <circle cx="210" cy="190" r="1.6" fill="#fff"/><circle cx="260" cy="160" r="1.6" fill="#fff"/>
-          <circle cx="310" cy="200" r="1.6" fill="#fff"/><circle cx="360" cy="170" r="1.6" fill="#fff"/>
-          <circle cx="410" cy="190" r="1.6" fill="#fff"/><circle cx="80" cy="260" r="1.6" fill="#fff"/>
-          <circle cx="140" cy="280" r="1.6" fill="#fff"/><circle cx="200" cy="250" r="1.6" fill="#fff"/>
-          <circle cx="260" cy="290" r="1.6" fill="#fff"/><circle cx="320" cy="260" r="1.6" fill="#fff"/>
-          <circle cx="380" cy="280" r="1.6" fill="#fff"/>
-        </g>
-        <circle cx="280" cy="200" r="4" fill="#C6A15B"/>
-        <circle class="node-pulse" cx="280" cy="200" r="6" style="stroke:#C6A15B"/>
-        <text x="290" y="196" class="route-label route-label-origin">INDIA</text>
-        <path class="route-line" d="M280,200 Q230,150 180,140"/>
-        <path class="route-line" d="M280,200 Q200,120 120,90"/>
-        <path class="route-line" d="M280,200 Q160,180 60,220"/>
-        <path class="route-line" d="M280,200 Q340,150 400,120"/>
-        <path class="route-line" d="M280,200 Q350,260 420,300"/>
-      </svg>
+
+    <div class="map-tooltip" id="mapTooltip">
+        <span class="map-tooltip-country" id="mapTooltipCountry"></span>
+        <span class="map-tooltip-text">Export Market</span>
     </div>
+
+    <svg
+        class="interactive-map"
+        viewBox="0 0 500 420"
+        aria-label="Rajson Impex export markets">
+
+        <!-- Background dots -->
+        <g class="map-dots" opacity="0.18">
+            <circle cx="40" cy="80" r="1.6"/>
+            <circle cx="70" cy="60" r="1.6"/>
+            <circle cx="100" cy="90" r="1.6"/>
+            <circle cx="140" cy="70" r="1.6"/>
+            <circle cx="180" cy="100" r="1.6"/>
+            <circle cx="220" cy="80" r="1.6"/>
+            <circle cx="260" cy="60" r="1.6"/>
+            <circle cx="300" cy="90" r="1.6"/>
+            <circle cx="340" cy="70" r="1.6"/>
+            <circle cx="380" cy="100" r="1.6"/>
+            <circle cx="420" cy="80" r="1.6"/>
+            <circle cx="60" cy="160" r="1.6"/>
+            <circle cx="110" cy="180" r="1.6"/>
+            <circle cx="160" cy="150" r="1.6"/>
+            <circle cx="210" cy="190" r="1.6"/>
+            <circle cx="260" cy="160" r="1.6"/>
+            <circle cx="310" cy="200" r="1.6"/>
+            <circle cx="360" cy="170" r="1.6"/>
+            <circle cx="410" cy="190" r="1.6"/>
+            <circle cx="80" cy="260" r="1.6"/>
+            <circle cx="140" cy="280" r="1.6"/>
+            <circle cx="200" cy="250" r="1.6"/>
+            <circle cx="260" cy="290" r="1.6"/>
+            <circle cx="320" cy="260" r="1.6"/>
+            <circle cx="380" cy="280" r="1.6"/>
+        </g>
+
+        <!-- INDIA -->
+        <g class="map-origin">
+            <circle cx="280" cy="200" r="4"/>
+            <circle class="node-pulse" cx="280" cy="200" r="6"/>
+            <text x="290" y="196">INDIA</text>
+        </g>
+
+
+        <!-- UAE -->
+        <g class="export-route" data-country="United Arab Emirates">
+            <path class="route-line"
+                  d="M280,200 Q230,150 180,140"/>
+            <circle class="destination-node" cx="180" cy="140" r="3"/>
+            <text class="destination-label" x="143" y="136">UAE</text>
+        </g>
+
+
+        <!-- CHINA -->
+        <g class="export-route" data-country="China">
+            <path class="route-line"
+                  d="M280,200 Q200,120 120,90"/>
+            <circle class="destination-node" cx="120" cy="90" r="3"/>
+            <text class="destination-label" x="126" y="86">CHINA</text>
+        </g>
+
+
+        <!-- VIETNAM -->
+        <g class="export-route" data-country="Vietnam">
+            <path class="route-line"
+                  d="M280,200 Q350,145 400,120"/>
+            <circle class="destination-node" cx="400" cy="120" r="3"/>
+            <text class="destination-label" x="408" y="116">VIETNAM</text>
+        </g>
+
+
+        <!-- INDONESIA -->
+        <g class="export-route" data-country="Indonesia">
+            <path class="route-line"
+                  d="M280,200 Q350,260 420,300"/>
+            <circle class="destination-node" cx="420" cy="300" r="3"/>
+            <text class="destination-label" x="428" y="306">INDONESIA</text>
+        </g>
+
+
+        <!-- PHILIPPINES -->
+        <g class="export-route" data-country="Philippines">
+            <path class="route-line"
+                  d="M280,200 Q355,175 430,165"/>
+            <circle class="destination-node" cx="430" cy="165" r="3"/>
+            <text class="destination-label" x="438" y="161">PHILIPPINES</text>
+        </g>
+
+
+        <!-- MALAYSIA -->
+        <g class="export-route" data-country="Malaysia">
+            <path class="route-line"
+                  d="M280,200 Q350,230 410,245"/>
+            <circle class="destination-node" cx="410" cy="245" r="3"/>
+            <text class="destination-label" x="418" y="241">MALAYSIA</text>
+        </g>
+
+
+        <!-- THAILAND -->
+        <g class="export-route" data-country="Thailand">
+            <path class="route-line"
+                  d="M280,200 Q350,205 425,205"/>
+            <circle class="destination-node" cx="425" cy="205" r="3"/>
+            <text class="destination-label" x="433" y="201">THAILAND</text>
+        </g>
+
+
+        <!-- AUSTRALIA -->
+        <g class="export-route" data-country="Australia">
+            <path class="route-line"
+                  d="M280,200 Q375,325 450,365"/>
+            <circle class="destination-node" cx="450" cy="365" r="3"/>
+            <text class="destination-label" x="458" y="371">AUSTRALIA</text>
+        </g>
+
+    </svg>
+</div>
   </div>
 </section>
 
@@ -1623,5 +1881,127 @@ AOS.init({
 });
 
 </script>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+    const map = document.querySelector(".interactive-map");
+    const routes = document.querySelectorAll(".export-route");
+
+    const tooltip = document.getElementById("mapTooltip");
+    const tooltipCountry = document.getElementById("mapTooltipCountry");
+
+    if (!map || !routes.length || !tooltip || !tooltipCountry) {
+        return;
+    }
+
+
+    /* -----------------------------------------
+       ACTIVATE A COUNTRY
+    ----------------------------------------- */
+
+    function activateRoute(route) {
+
+        routes.forEach(item => {
+            item.classList.remove("active");
+        });
+
+        route.classList.add("active");
+
+        map.classList.add("has-active");
+
+        const country = route.dataset.country;
+
+        tooltipCountry.textContent = country;
+
+        tooltip.classList.add("visible");
+    }
+
+
+    /* -----------------------------------------
+       CLEAR ACTIVE COUNTRY
+    ----------------------------------------- */
+
+    function clearRoute() {
+
+        routes.forEach(item => {
+            item.classList.remove("active");
+        });
+
+        map.classList.remove("has-active");
+
+        tooltip.classList.remove("visible");
+    }
+
+
+    /* -----------------------------------------
+       DESKTOP HOVER
+    ----------------------------------------- */
+
+    routes.forEach(route => {
+
+        route.addEventListener("mouseenter", () => {
+
+            // Hover behaviour is mainly for devices
+            // that actually have a mouse.
+            if (window.matchMedia("(hover: hover)").matches) {
+                activateRoute(route);
+            }
+
+        });
+
+
+        route.addEventListener("mouseleave", () => {
+
+            if (window.matchMedia("(hover: hover)").matches) {
+                clearRoute();
+            }
+
+        });
+
+
+        /* -----------------------------------------
+           MOBILE / TOUCH TAP
+        ----------------------------------------- */
+
+        route.addEventListener("click", (event) => {
+
+            event.stopPropagation();
+
+            // On touch devices, tapping the same
+            // country again closes it.
+            if (!window.matchMedia("(hover: hover)").matches) {
+
+                if (route.classList.contains("active")) {
+                    clearRoute();
+                } else {
+                    activateRoute(route);
+                }
+
+            }
+
+        });
+
+    });
+
+
+    /* -----------------------------------------
+       CLICK OUTSIDE MAP
+       CLOSES MOBILE SELECTION
+    ----------------------------------------- */
+
+    document.addEventListener("click", (event) => {
+
+        if (!map.contains(event.target)) {
+            clearRoute();
+        }
+
+    });
+
+});
+</script>
+
+
 </body>
 </html>
