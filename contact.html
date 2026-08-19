@@ -6,8 +6,8 @@
     <link rel="icon" type="image/png" href="assets/logo/favicon.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Rajson Impex | Export Inquiries</title>
-    <meta name="description" content="Contact Rajson Impex for export inquiries, quotations, product specifications, and international groundnut supply.">
+    <title>Contact Rajson Overseas | Export Inquiries</title>
+    <meta name="description" content="Contact Rajson Overseas for export inquiries, quotations, product specifications, and international groundnut supply.">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -405,18 +405,67 @@
 
 }
 
-.info-item{
-
-    margin-top:25px;
-
+.contact-details{
+    margin-top:35px;
+    display:grid;
+    grid-template-columns:repeat(2, 1fr);
+    gap:18px;
 }
 
-.info-item h3{
+.contact-details .info-item{
+    display:flex;
+    align-items:flex-start;
+    gap:16px;
+    padding:22px 20px;
+    border:1px solid var(--border);
+    background:#fff;
+    transition:.3s ease;
+}
 
+.contact-details .info-item:hover{
+    transform:translateY(-3px);
+    border-color:rgba(198,161,91,.55);
+    box-shadow:0 12px 28px rgba(10,32,54,.08);
+}
+
+.info-icon{
+    width:42px;
+    height:42px;
+    flex:0 0 42px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:var(--navy);
+    color:var(--gold);
+    font-size:16px;
+}
+
+.info-content{
+    min-width:0;
+}
+
+.info-content h3{
+    margin:0 0 5px;
     color:var(--navy);
+    font-size:16px;
+    font-weight:700;
+}
 
-    margin-bottom:8px;
+.info-content p,
+.info-content a{
+    margin:0;
+    color:var(--muted);
+    font-size:15px;
+    line-height:1.5;
+    word-break:break-word;
+}
 
+.info-content a{
+    transition:.3s ease;
+}
+
+.info-content a:hover{
+    color:var(--gold);
 }
 
 .contact-form{
@@ -514,9 +563,11 @@
 @media(max-width:900px){
 
     .contact-grid{
-
         grid-template-columns:1fr;
+    }
 
+    .contact-details{
+        grid-template-columns:1fr;
     }
 
 }
@@ -905,9 +956,9 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 
         <a class="logo" href="index.html">
 
-            <img src="assets/logo/logo.png" alt="Rajson Impex">
+            <img src="assets/logo/logo.png" alt="Rajson Overseas">
 
-            <span>Rajson Impex</span>
+            <span>Rajson Overseas</span>
 
         </a>
 
@@ -960,37 +1011,60 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
                 for an export quotation.
             </p>
 
-            <div class="info-item">
+            <div class="contact-details">
 
-                <h3>📧 Email</h3>
+    <div class="info-item">
+        <div class="info-icon">
+            <i class="fa-solid fa-envelope"></i>
+        </div>
 
-                <p>rajsonimpex.export@gmail.com</p>
+        <div class="info-content">
+            <h3>Email</h3>
+            <a href="mailto:rajsonimpex.export@gmail.com">
+                rajsonimpex.export@gmail.com
+            </a>
+        </div>
+    </div>
 
-            </div>
 
-            <div class="info-item">
+    <div class="info-item">
+        <div class="info-icon">
+            <i class="fa-solid fa-phone"></i>
+        </div>
 
-                <h3>📞 Phone</h3>
+        <div class="info-content">
+            <h3>Phone</h3>
+            <a href="tel:+919829017198">
+                +91 98290 17198
+            </a>
+        </div>
+    </div>
 
-                <p>+91 9829017198</p>
 
-            </div>
+    <div class="info-item">
+        <div class="info-icon">
+            <i class="fa-solid fa-location-dot"></i>
+        </div>
 
-            <div class="info-item">
+        <div class="info-content">
+            <h3>Location</h3>
+            <p>Jaipur, Rajasthan, India</p>
+        </div>
+    </div>
 
-                <h3>📍 Location</h3>
 
-                <p>Jaipur, Rajasthan, India</p>
+    <div class="info-item">
+        <div class="info-icon">
+            <i class="fa-solid fa-globe"></i>
+        </div>
 
-            </div>
+        <div class="info-content">
+            <h3>Export Markets</h3>
+            <p>11 Countries</p>
+        </div>
+    </div>
 
-            <div class="info-item">
-
-                <h3>🌍 Export Markets</h3>
-
-                <p>Worldwide</p>
-
-            </div>
+</div>
 
 
 
@@ -1004,7 +1078,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 
     <p><strong>Mr. Rajendra Jakhar</strong></p>
 
-    <p>Founder & Export Director</p>
+    <p><strong>Founder</strong></p>
 
     <p>
         
@@ -1029,7 +1103,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 
 <section class="business-resources">
 
-    <h3>Rajson Impex Verified Resources</h3>
+    <h3>Rajson Overseas Verified Resources</h3>
 
     <p class="resource-text">
         Download our official business identity and verified contact
@@ -1095,8 +1169,8 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 
                 <input type="hidden" name="access_key" value="16eefa28-3ecf-4542-9145-f1b00d9350e2">
                 <input type="hidden" id="reference_number" name="reference_number">
-                <input type="hidden" name="from_name" value="Rajson Impex Website">
-                <input type="hidden" name="subject" value="New Export Inquiry | Rajson Impex">
+                <input type="hidden" name="from_name" value="Rajson Overseas Website">
+                <input type="hidden" name="subject" value="New Export Inquiry | Rajson Overseas">
 
                 <input type="hidden" name="replyto" value="email">
 
@@ -1274,7 +1348,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 
             <small>WHY CHOOSE US</small>
 
-            <h2>Why Buyers Trust Rajson Impex</h2>
+            <h2>Why Buyers Trust Rajson Overseas</h2>
 
         </div>
 
@@ -1364,7 +1438,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 
 <footer>
 
-    © 2026 Rajson Impex • Premium Agricultural Exports from India
+    © 2026 Rajson Overseas • Premium Agricultural Exports from India
 
 </footer>
 

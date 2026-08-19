@@ -4,18 +4,18 @@
   <link rel="icon" type="image/png" href="assets/logo/favicon.png">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Rajson Impex | Premium Exporter from India</title>
+<title>Rajson Overseas | Premium Exporter from India</title>
 <meta name="description"
-      content="Rajson Impex exports premium-quality Java and Bold Groundnuts from India. Trusted supplier for importers, wholesalers and international buyers.">
+      content="Rajson Overseas exports premium-quality Java and Bold Groundnuts from India. Trusted supplier for importers, wholesalers and international buyers.">
 
-<meta name="keywords" content="Groundnut Exporter India, Java Groundnut, Bold Groundnut, Peanut Export, Agricultural Export, Rajson Impex">
+<meta name="keywords" content="Groundnut Exporter India, Java Groundnut, Bold Groundnut, Peanut Export, Agricultural Export, Rajson Overseas">
 
-<meta name="author" content="Rajson Impex">
+<meta name="author" content="Rajson Overseas">
 
 <meta name="robots" content="index, follow">
 
 <meta property="og:title"
-      content="Rajson Impex | Premium Exporter from India">
+      content="Rajson Overseas | Premium Exporter from India">
 
 <meta property="og:description" content="Premium export-quality Java and Bold Groundnuts from India.">
 <meta property="og:image"
@@ -25,7 +25,7 @@
 <meta property="og:url"
       content="https://YOURDOMAIN.com/">
 <meta property="og:site_name"
-      content="Rajson Impex">
+      content="Rajson Overseas">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -76,7 +76,7 @@
   }
 
   /* ---------- Reveal on scroll ---------- */
-  .reveal{opacity:0; transform: translateY(28px); transition: opacity .8s cubic-bezier(.2,.7,.2,1), transform .8s cubic-bezier(.2,.7,.2,1);}
+  .reveal{opacity:0; transform: translateY(28px); transition: opacity .4s cubic-bezier(.2,.7,.2,1), transform .8s cubic-bezier(.2,.7,.2,1);}
   .reveal.in{opacity:1; transform:none;}
   .reveal-delay-1{transition-delay:.1s;}
   .reveal-delay-2{transition-delay:.2s;}
@@ -100,18 +100,51 @@
   .brand{
     font-family: var(--font-display);
     font-weight:600;
-    font-size: 21px;
-    letter-spacing: 0.01em;
-    color: var(--white);
-    transition: color .4s ease;
-    display:flex; align-items:center; gap:10px;
-  }
-  .nav.solid .brand{color: var(--navy-deep);}
-  .brand .mark{
-    width:9px; height:9px; border-radius:50%;
-    background: var(--gold);
-    display:inline-block;
-  }
+    font-size:26px;
+    letter-spacing:0.01em;
+    color:var(--white);
+
+    display:flex;
+    align-items:center;
+    gap:10px;
+
+    transition:
+        color .75s cubic-bezier(.2,.7,.2,1),
+        font-size .85s cubic-bezier(.2,.7,.2,1);
+}
+  /* ---------- Floating Logo Transition ---------- */
+
+/* ---------- Floating Logo Transition ---------- */
+
+.floating-logo{
+    position:fixed;
+
+    top:13px;
+    left:0;
+
+    width:34px;
+    height:34px;
+
+    object-fit:contain;
+
+    z-index:10001;
+    pointer-events:none;
+
+    opacity:0;
+
+    transition:opacity .8s ease;
+}
+
+.floating-logo.visible{
+    opacity:1;
+}
+
+
+  .nav.solid .brand{
+    color:var(--navy-deep);
+    font-size:18px;
+}
+  
   .nav-links{display:flex; gap:40px; align-items:center;}
   .nav-links a{
     font-size: 14.5px; font-weight:500; color: rgba(255,255,255,0.82);
@@ -329,6 +362,18 @@
   .product-body h3{font-family: var(--font-display); font-size:26px; font-weight:600;}
   .product-body p{color: var(--ink-muted); font-size:15px; margin-top:10px; max-width:480px;}
   .spec-table{margin-top:24px; display:grid; grid-template-columns: repeat(4,1fr); gap:18px; border-top:1px solid var(--gray-line); padding-top:20px;}
+  .product-specs{
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px 32px;
+}
+
+.product-specs .spec-item{
+    min-width: 0;
+}
+
+.product-specs .spec-item .v{
+    line-height: 1.55;
+}
   .spec-item .k{font-family: var(--font-mono); font-size:10.5px; color: var(--ink-muted); text-transform:uppercase; letter-spacing:0.06em;}
   .spec-item .v{font-size:14.5px; color: var(--navy-deep); font-weight:600; margin-top:5px;}
   .product-body .inline-btn{
@@ -491,7 +536,7 @@
     position:absolute;
 
     left:50%;
-    top:50%;
+    top:12px;
 
     transform:
         translate(-50%, -130%)
@@ -998,6 +1043,17 @@ body.menu-open{
     cursor:pointer;
 
 }
+
+
+
+
+
+
+
+
+
+
+
 </style>
 
 
@@ -1043,8 +1099,14 @@ body.menu-open{
 
 <!-- ===================== NAV ===================== -->
 <nav class="nav" id="nav">
+
+  <img
+    src="assets/logo/logo.png"
+    alt="Rajson Overseas"
+    class="floating-logo">
+
   <div class="wrap">
-    <a href="#" class="brand"><span class="mark"></span>Rajson Impex</a>
+    <a href="#" class="brand">Rajson Overseas</a>
     <ul class="nav-links" id="navLinks">
     <li><a href="about.html">About</a></li>
     <li><a href="products.html">Products</a></li>
@@ -1069,7 +1131,7 @@ body.menu-open{
 <h1>Indian Groundnuts<br>for <em>Global Markets.</em></h1>
 
 <p class="sub">
-  Rajson Impex supplies Bold and Java Groundnuts sourced from Rajasthan
+  Rajson Overseas supplies Bold and Java Groundnuts sourced from Rajasthan
   and Gujarat, India, with multiple commercial grades for international buyers.
 </p>
       <div class="hero-ctas">
@@ -1086,65 +1148,69 @@ body.menu-open{
 
         <!-- destination nodes -->
         <!-- UAE -->
-        <path class="route-line" d="M290,230 Q255,190 225,195"/>
-        <circle class="node" cx="225" cy="195" r="3"/>
-        <text class="route-label" x="188" y="192">UAE</text>
+        <path class="route-line" d="M290,230 Q255,205 225,190"/>
+        <circle class="node" cx="225" cy="190" r="3"/>
+        <text class="route-label" x="175" y="186">UAE</text>
 
-        <!-- Turkey -->
-<path class="route-line" d="M290,230 Q230,175 180,155"/>
-<circle class="node" cx="180" cy="155" r="3"/>
-<text class="route-label" x="145" y="150">TURKEY</text>
 
-        <!-- Germany -->
-<path class="route-line" d="M290,230 Q195,125 115,90"/>
-<circle class="node" cx="115" cy="90" r="3"/>
-<text class="route-label" x="80" y="102">GERMANY</text> 
-        
+        <!-- Saudi Arabia -->
+        <path class="route-line" d="M290,230 Q220,175 170,145"/>
+        <circle class="node" cx="170" cy="145" r="3"/>
+        <text class="route-label" x="105" y="141">SAUDI ARABIA</text>
 
-        <!-- USA -->
-        <path class="route-line" d="M290,230 Q140,150 30,190"/>
-        <circle class="node" cx="30" cy="190" r="3"/>
-        <text class="route-label" x="-6" y="212">USA</text>
+
+        <!-- Qatar -->
+        <path class="route-line" d="M290,230 Q285,165 270,125"/>
+        <circle class="node" cx="270" cy="125" r="3"/>
+        <text class="route-label" x="278" y="121">QATAR</text>
+
+
+        <!-- Kuwait -->
+        <path class="route-line" d="M290,230 Q250,135 220,85"/>
+        <circle class="node" cx="220" cy="85" r="3"/>
+        <text class="route-label" x="227" y="81">KUWAIT</text>
+ 
+       
 
 
 
         <!-- Indonesia -->
-<path class="route-line" d="M290,230 Q380,315 455,360"/>
-<circle class="node" cx="455" cy="360" r="3"/>
-<text class="route-label" x="463" y="356">INDONESIA</text>
+        <path class="route-line" d="M290,230 Q380,315 455,360"/>
+        <circle class="node" cx="455" cy="360" r="3"/>
+        <text class="route-label" x="463" y="356">INDONESIA</text>
 
-        <!-- Philippines -->
-<path class="route-line" d="M290,230 Q350,175 430,120"/>
-<circle class="node" cx="430" cy="120" r="3"/>
-<text class="route-label" x="438" y="116">PHILIPPINES</text>
- 
-        <!-- Malaysia -->
-<path class="route-line" d="M290,230 Q370,275 435,315"/>
-<circle class="node" cx="435" cy="315" r="3"/>
-<text class="route-label" x="443" y="311">MALAYSIA</text>
+                <!-- Philippines -->
+        <path class="route-line" d="M290,230 Q350,175 430,120"/>
+        <circle class="node" cx="430" cy="120" r="3"/>
+        <text class="route-label" x="438" y="116">PHILIPPINES</text>
+        
+                <!-- Malaysia -->
+        <path class="route-line" d="M290,230 Q370,275 435,315"/>
+        <circle class="node" cx="435" cy="315" r="3"/>
+        <text class="route-label" x="443" y="311">MALAYSIA</text>
 
-        <!-- Thailand -->
-<path class="route-line" d="M290,230 Q370,205 455,175"/>
-<circle class="node" cx="455" cy="175" r="3"/>
-<text class="route-label" x="463" y="171">THAILAND</text>
-
-
-
-        <!-- Vietnam -->
-<path class="route-line" d="M290,230 Q375,235 445,245"/>
-<circle class="node" cx="445" cy="245" r="3"/>
-<text class="route-label" x="453" y="241">VIETNAM</text>
-
-        <!-- China -->
-<path class="route-line" d="M290,230 Q345,185 385,175"/>
-<circle class="node" cx="385" cy="175" r="3"/>
-<text class="route-label" x="392" y="170">CHINA</text>
+                <!-- Thailand -->
+        <path class="route-line" d="M290,230 Q370,205 455,175"/>
+        <circle class="node" cx="455" cy="175" r="3"/>
+        <text class="route-label" x="463" y="171">THAILAND</text>
 
 
-        <!-- Australia -->
-<path class="route-line" d="M290,230 Q390,350 475,395"/>
-<circle class="node" cx="475" cy="395" r="3"/>
-<text class="route-label" x="483" y="391">AUSTRALIA</text>
+
+                <!-- Vietnam -->
+        <path class="route-line" d="M290,230 Q375,235 445,245"/>
+        <circle class="node" cx="445" cy="245" r="3"/>
+        <text class="route-label" x="453" y="241">VIETNAM</text>
+
+                <!-- China -->
+        <path class="route-line" d="M290,230 Q345,185 385,175"/>
+        <circle class="node" cx="385" cy="175" r="3"/>
+        <text class="route-label" x="392" y="170">CHINA</text>
+
+
+                <!-- Australia -->
+        <path class="route-line" d="M290,230 Q390,350 475,395"/>
+        <circle class="node" cx="475" cy="395" r="3"/>
+        <text class="route-label" x="483" y="391">AUSTRALIA</text>
 
         <!-- faint world dot grid -->
         <g opacity="0.12">
@@ -1168,19 +1234,19 @@ body.menu-open{
   <div class="wrap about-grid">
     <div class="reveal about-figure">
     <img src="assets/images/about.jpg"
-         alt="Rajson Impex"
+         alt="Rajson Overseas"
          loading="lazy"
          id="aboutImage">
 
     <div class="tag">Est. Jaipur, Rajasthan · India</div>
 </div>
     <div class="about-body">
-      <p class="reveal label">About Rajson Impex</p>
+      <p class="reveal label">About Rajson Overseas</p>
 
 <h2 class="reveal">Premium Indian Groundnuts from Rajasthan &amp; Gujarat.</h2>
 
 <p class="reveal reveal-delay-1">
-  Rajson Impex focuses on supplying Bold and Java Groundnuts sourced from
+  Rajson Overseas focuses on supplying Bold and Java Groundnuts sourced from
   Rajasthan and Gujarat, India, with multiple commercial size grades for
   international buyers.
 </p>
@@ -1225,37 +1291,7 @@ body.menu-open{
     </div>
 
     <div class="product-grid">
-      <div class="product-card reveal"
-           onclick="window.location.href='products/java-groundnut.html'"
-           style="cursor:pointer;">
-        <div class="product-hero" style="background-image:url('assets/products/java-groundnut/java2.jpg');">
-          <span class="badge">ORIGIN: GUJARAT / RAJASTHAN, INDIA</span>
-        </div>
-        <div class="product-body">
-          <h3>Java Groundnut</h3>
-<p>
-  Small, round and compact kernels with a pinkish skin, commonly selected
-  for peanut butter, confectionery and dry roasting applications.
-</p>
-          <div class="spec-table">
-            <div class="spec-item"><div class="k">Moisture</div><div class="v">≤ 7–8%</div></div>
-<div class="spec-item"><div class="k">Counts</div><div class="v">40/50 – 80/90</div></div>
-<div class="spec-item"><div class="k">Shape</div><div class="v">Small & round</div></div>
-<div class="spec-item"><div class="k">Skin</div><div class="v">Pinkish</div></div>
-          </div>
-          
-          <div class="product-actions">
-              <a href="products/java-groundnut.html" class="btn btn-navy">
-                  View Details
-              </a>
-
-              <a href="contact.html?product=Java%20Groundnut"
-   class="inline-btn">
-    Request Quote →
-</a>
-          </div>
-        </div>
-      </div>
+      
 
       <div class="product-card reveal reveal-delay-1"
            onclick="window.location.href='products/bold-groundnut.html'"
@@ -1269,12 +1305,39 @@ body.menu-open{
   Large, oval to elongated kernels with light red to reddish-brown skin,
   commonly used for roasting, snacking, peanut products and oil extraction.
 </p>
-          <div class="spec-table">
-            <div class="spec-item"><div class="k">Moisture</div><div class="v">≤ 7–8%</div></div>
-<div class="spec-item"><div class="k">Counts</div><div class="v">35/40 – 70/80</div></div>
-<div class="spec-item"><div class="k">Shape</div><div class="v">Oval / elongated</div></div>
-<div class="spec-item"><div class="k">Skin</div><div class="v">Light red to reddish-brown</div></div>
+          <div class="spec-table product-specs">
+
+          <div class="spec-item">
+              <div class="k">Moisture</div>
+              <div class="v">≤ 7–8%</div>
           </div>
+
+          <div class="spec-item">
+              <div class="k">Counts</div>
+              <div class="v">35/40 – 70/80</div>
+          </div>
+
+          <div class="spec-item">
+              <div class="k">Shape</div>
+              <div class="v">Oval / elongated</div>
+          </div>
+
+          <div class="spec-item">
+              <div class="k">Skin</div>
+              <div class="v">Light red to reddish-brown</div>
+          </div>
+
+          <div class="spec-item">
+              <div class="k">Pods</div>
+              <div class="v">18/20 · 20/24 · 20/26</div>
+          </div>
+
+          <div class="spec-item">
+              <div class="k">Kernels</div>
+              <div class="v">40/50 · 50/60 · 60/70 · 70/80</div>
+          </div>
+
+      </div>
           
           <div class="product-actions">
               <a href="products/bold-groundnut.html" class="btn btn-navy">
@@ -1282,6 +1345,68 @@ body.menu-open{
               </a>
 
               <a href="contact.html?product=Bold%20Groundnut"
+   class="inline-btn">
+    Request Quote →
+</a>
+          </div>
+        </div>
+      </div>
+
+
+
+
+      <div class="product-card reveal"
+           onclick="window.location.href='products/java-groundnut.html'"
+           style="cursor:pointer;">
+        <div class="product-hero" style="background-image:url('assets/products/java-groundnut/java2.jpg');">
+          <span class="badge">ORIGIN: GUJARAT / RAJASTHAN, INDIA</span>
+        </div>
+        <div class="product-body">
+          <h3>Java Groundnut</h3>
+<p>
+  Small, round and compact kernels with a pinkish skin, commonly selected
+  for peanut butter, confectionery and dry roasting applications.
+</p>
+          <div class="spec-table product-specs">
+
+          <div class="spec-item">
+              <div class="k">Moisture</div>
+              <div class="v">≤ 7–8%</div>
+          </div>
+
+          <div class="spec-item">
+              <div class="k">Counts</div>
+              <div class="v">40/50 – 80/90</div>
+          </div>
+
+          <div class="spec-item">
+              <div class="k">Shape</div>
+              <div class="v">Small & round</div>
+          </div>
+
+          <div class="spec-item">
+              <div class="k">Skin</div>
+              <div class="v">Pinkish</div>
+          </div>
+
+          <div class="spec-item">
+              <div class="k">Pods</div>
+              <div class="v">40/50 · 45/55 · 50/60 · 60/70</div>
+          </div>
+
+          <div class="spec-item">
+              <div class="k">Kernels</div>
+              <div class="v">40/50 · 50/60 · 60/70 · 70/80 · 80/90</div>
+          </div>
+
+      </div>
+          
+          <div class="product-actions">
+              <a href="products/java-groundnut.html" class="btn btn-navy">
+                  View Details
+              </a>
+
+              <a href="contact.html?product=Java%20Groundnut"
    class="inline-btn">
     Request Quote →
 </a>
@@ -1322,7 +1447,7 @@ body.menu-open{
   <div class="why-num">01</div>
   <h3>Bold &amp; Java Varieties</h3>
   <p>
-    Our core range includes Bold and Java Groundnuts, sourced from
+    Our core range includes Bold and Java Groundnuts (pods and kernels), sourced from
     Rajasthan and Gujarat, India.
   </p>
 </div>
@@ -1331,8 +1456,10 @@ body.menu-open{
   <div class="why-num">02</div>
   <h3>Multiple Size Grades</h3>
   <p>
-    Bold grades range from 35/40 to 70/80, while Java grades range
-  from 40/50 to 80/90.
+    Bold Groundnut is available in pod sizes 18/20, 20/24 and 20/26,
+    with kernel sizes from 40/50 to 70/80. Java Groundnut is available
+    in pod sizes 40/50, 45/55, 50/60 and 60/70, with kernel sizes from
+    40/50 to 80/90.
   </p>
 </div>
 
@@ -1381,20 +1508,23 @@ body.menu-open{
   Indian Groundnuts for International Buyers.
 </h2>
       <p class="reveal lede">
-  Rajson Impex focuses on supplying Indian groundnuts to international
+  Rajson Overseas focuses on supplying Indian groundnuts to international
   buyers, with final product specifications and export requirements
   discussed according to the destination and buyer requirements.
 </p>
       <ul class="country-list reveal reveal-delay-1">
-        <li><span class="dot"></span>Indonesia</li>
-        <li><span class="dot"></span>Vietnam</li>
-        <li><span class="dot"></span>Philippines</li>
-        <li><span class="dot"></span>Malaysia</li>
-        <li><span class="dot"></span>Thailand</li>
-        <li><span class="dot"></span>United Arab Emirates</li>
-        <li><span class="dot"></span>Australia</li>
-        <li><span class="dot"></span>China</li>
-      </ul>
+      <li><span class="dot"></span>Kuwait</li>
+      <li><span class="dot"></span>Qatar</li>
+      <li><span class="dot"></span>Saudi Arabia</li>
+      <li><span class="dot"></span>United Arab Emirates</li>
+      <li><span class="dot"></span>Philippines</li>
+      <li><span class="dot"></span>China</li>
+      <li><span class="dot"></span>Thailand</li>
+      <li><span class="dot"></span>Vietnam</li>
+      <li><span class="dot"></span>Malaysia</li>
+      <li><span class="dot"></span>Indonesia</li>
+      <li><span class="dot"></span>Australia</li>
+    </ul>
       
     </div>
     
@@ -1410,7 +1540,7 @@ body.menu-open{
     <svg
         class="interactive-map"
         viewBox="0 0 500 420"
-        aria-label="Rajson Impex export markets">
+        aria-label="Rajson Overseas export markets">
 
         <!-- Background dots -->
         <g class="map-dots" opacity="0.18">
@@ -1449,66 +1579,93 @@ body.menu-open{
         </g>
 
 
+        <!-- SAUDI ARABIA -->
+        <g class="export-route" data-country="Saudi Arabia">
+            <path class="route-line"
+                  d="M280,200 Q190,165 105,140"/>
+            <circle class="destination-node" cx="105" cy="140" r="3"/>
+            <text class="destination-label" x="42" y="136">SAUDI ARABIA</text>
+        </g>
+
+
         <!-- UAE -->
         <g class="export-route" data-country="United Arab Emirates">
             <path class="route-line"
-                  d="M280,200 Q230,150 180,140"/>
-            <circle class="destination-node" cx="180" cy="140" r="3"/>
-            <text class="destination-label" x="143" y="136">UAE</text>
+                  d="M280,200 Q210,190 150,190"/>
+            <circle class="destination-node" cx="150" cy="190" r="3"/>
+            <text class="destination-label" x="108" y="186">UAE</text>
+        </g>
+
+
+        <!-- QATAR -->
+        <g class="export-route" data-country="Qatar">
+            <path class="route-line"
+                  d="M280,200 Q245,150 210,125"/>
+            <circle class="destination-node" cx="210" cy="125" r="3"/>
+            <text class="destination-label" x="218" y="121">QATAR</text>
+        </g>
+
+
+        <!-- KUWAIT -->
+        <g class="export-route" data-country="Kuwait">
+            <path class="route-line"
+                  d="M280,200 Q235,120 200,75"/>
+            <circle class="destination-node" cx="200" cy="75" r="3"/>
+            <text class="destination-label" x="207" y="71">KUWAIT</text>
         </g>
 
 
         <!-- CHINA -->
         <g class="export-route" data-country="China">
             <path class="route-line"
-                  d="M280,200 Q200,120 120,90"/>
-            <circle class="destination-node" cx="120" cy="90" r="3"/>
-            <text class="destination-label" x="126" y="86">CHINA</text>
+                  d="M280,200 Q180,125 90,70"/>
+            <circle class="destination-node" cx="90" cy="70" r="3"/>
+            <text class="destination-label" x="96" y="66">CHINA</text>
         </g>
 
 
         <!-- VIETNAM -->
         <g class="export-route" data-country="Vietnam">
             <path class="route-line"
-                  d="M280,200 Q350,145 400,120"/>
-            <circle class="destination-node" cx="400" cy="120" r="3"/>
-            <text class="destination-label" x="408" y="116">VIETNAM</text>
-        </g>
-
-
-        <!-- INDONESIA -->
-        <g class="export-route" data-country="Indonesia">
-            <path class="route-line"
-                  d="M280,200 Q350,260 420,300"/>
-            <circle class="destination-node" cx="420" cy="300" r="3"/>
-            <text class="destination-label" x="428" y="306">INDONESIA</text>
+                  d="M280,200 Q350,145 400,105"/>
+            <circle class="destination-node" cx="400" cy="105" r="3"/>
+            <text class="destination-label" x="408" y="101">VIETNAM</text>
         </g>
 
 
         <!-- PHILIPPINES -->
         <g class="export-route" data-country="Philippines">
             <path class="route-line"
-                  d="M280,200 Q355,175 430,165"/>
-            <circle class="destination-node" cx="430" cy="165" r="3"/>
-            <text class="destination-label" x="438" y="161">PHILIPPINES</text>
-        </g>
-
-
-        <!-- MALAYSIA -->
-        <g class="export-route" data-country="Malaysia">
-            <path class="route-line"
-                  d="M280,200 Q350,230 410,245"/>
-            <circle class="destination-node" cx="410" cy="245" r="3"/>
-            <text class="destination-label" x="418" y="241">MALAYSIA</text>
+                  d="M280,200 Q355,170 430,150"/>
+            <circle class="destination-node" cx="430" cy="150" r="3"/>
+            <text class="destination-label" x="438" y="146">PHILIPPINES</text>
         </g>
 
 
         <!-- THAILAND -->
         <g class="export-route" data-country="Thailand">
             <path class="route-line"
-                  d="M280,200 Q350,205 425,205"/>
-            <circle class="destination-node" cx="425" cy="205" r="3"/>
-            <text class="destination-label" x="433" y="201">THAILAND</text>
+                  d="M280,200 Q350,198 425,195"/>
+            <circle class="destination-node" cx="425" cy="195" r="3"/>
+            <text class="destination-label" x="433" y="191">THAILAND</text>
+        </g>
+
+
+        <!-- MALAYSIA -->
+        <g class="export-route" data-country="Malaysia">
+            <path class="route-line"
+                  d="M280,200 Q350,225 410,235"/>
+            <circle class="destination-node" cx="410" cy="235" r="3"/>
+            <text class="destination-label" x="418" y="231">MALAYSIA</text>
+        </g>
+
+
+        <!-- INDONESIA -->
+        <g class="export-route" data-country="Indonesia">
+            <path class="route-line"
+                  d="M280,200 Q350,255 420,300"/>
+            <circle class="destination-node" cx="420" cy="300" r="3"/>
+            <text class="destination-label" x="428" y="306">INDONESIA</text>
         </g>
 
 
@@ -1619,7 +1776,7 @@ body.menu-open{
   <div class="wrap">
     <div class="footer-grid">
       <div class="footer-brand">
-        <a href="#" class="brand"><span class="mark"></span>Rajson Impex</a>
+        <a href="#" class="brand"><span class="mark"></span>Rajson Overseas</a>
         <p>AgricPremium Indian groundnuts for international buyers, with Bold and Java varieties available across multiple commercial size grades.</p>
       </div>
       <div class="footer-col">
@@ -1651,7 +1808,7 @@ body.menu-open{
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© 2026 Rajson Impex. All rights reserved.</span>
+      <span>© 2026 Rajson Overseas. All rights reserved.</span>
       <span>Exporting Quality. Delivering Trust.</span>
     </div>
   </div>
@@ -1662,10 +1819,53 @@ body.menu-open{
 
 <script>
   // Sticky nav solid-on-scroll
-  const nav = document.getElementById('nav');
-  window.addEventListener('scroll', () => {
-    nav.classList.toggle('solid', window.scrollY > 60);
-  });
+  // Sticky nav + floating logo transition
+const nav = document.getElementById('nav');
+const floatingLogo = document.querySelector('.floating-logo');
+const brand = document.querySelector('.brand');
+
+
+
+
+function updateFloatingLogo(){
+
+    const scrollY = window.scrollY;
+
+    nav.classList.toggle('solid', scrollY > 60);
+
+    const brandRect = brand.getBoundingClientRect();
+
+    const logoSize = 34;
+    const gap = 9;
+
+    /* Position logo horizontally beside Rajson Overseas */
+    const targetLeft =
+        brandRect.left - logoSize - gap;
+
+    floatingLogo.style.left =
+        `${targetLeft}px`;
+
+    
+
+    /* Only fade the logo in/out */
+    if(scrollY > 60){
+
+        floatingLogo.classList.add('visible');
+
+    }else{
+
+        floatingLogo.classList.remove('visible');
+
+    }
+}
+
+
+
+
+window.addEventListener('scroll', updateFloatingLogo);
+window.addEventListener('resize', updateFloatingLogo);
+
+updateFloatingLogo();
 
   // Mobile nav toggle
   const navToggle = document.getElementById('navToggle');
@@ -1872,7 +2072,7 @@ modal.onclick=(e)=>{
 
 AOS.init({
 
-    duration:900,
+    duration:400,
 
     once:true,
 
