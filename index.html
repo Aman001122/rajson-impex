@@ -715,9 +715,7 @@
     font-size:26px;
     }
 
-.brand img{
-    width:48px;
-}
+
     .wrap{padding:0 22px;}
     .section{padding:90px 0;}
     /* ---------- MOBILE HERO FIX ---------- */
@@ -1946,11 +1944,15 @@ function updateFloatingLogo(){
     const brandRect = brand.getBoundingClientRect();
 
     const logoSize = 34;
-    const gap = 9;
+    const gap = 10;
 
-    /* Position logo horizontally beside Rajson Overseas */
-    const targetLeft =
+    let targetLeft =
         brandRect.left - logoSize - gap;
+
+    /* Keep the logo fully visible on mobile */
+    if(window.innerWidth <= 640){
+        targetLeft = Math.max(10, targetLeft);
+    }
 
     floatingLogo.style.left =
         `${targetLeft}px`;
